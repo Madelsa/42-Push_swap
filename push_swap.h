@@ -6,7 +6,7 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:21:19 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/10/24 12:33:31 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:31:18 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 # include "./libft/libft.h"
 
-void	check_input_integer(char *str);
+void		check_input_integer(char **arr);
 #endif
