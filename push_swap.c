@@ -6,7 +6,7 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:20:59 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/10/24 16:39:56 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:30:41 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ void	check_input_integer(char **arr)
 {
 	int	i;
 	int	j;
+	int	sign_count;
 
 	i = 0;
+	sign_count = 0;
 	while (arr[i] != NULL)
 	{
 		j = 0;
@@ -38,8 +40,8 @@ void	check_input_integer(char **arr)
 		{
 			if (arr[i][j] == '-' || arr[i][j] == '+')
 			{
-				if ((arr[i][j] == '-' || arr[i][j] == '+')
-					&& ft_isdigit(arr[i][j + 1]) == 0)
+				sign_count++;
+				if (ft_isdigit(arr[i][j + 1]) == 0 || sign_count > 1)
 					return (free_string(arr), exit(1));
 			}
 			else if (ft_isdigit(arr[i][j]) == 0)
@@ -56,7 +58,9 @@ int	main(int ac, char **av)
 	int		j;
 	char	**arr;
 
-	(void)ac;
+	// t_ps	stack;
+	if (ac == 1)
+		return (1);
 	i = 1;
 	while (av[i] != NULL)
 	{
@@ -65,7 +69,7 @@ int	main(int ac, char **av)
 		j = 0;
 		while (arr[j])
 		{
-			ft_printf("%s\n", arr[j]);
+			ft_printf("%d\n", ft_atoi(arr[j]));
 			j++;
 		}
 		free_string(arr);

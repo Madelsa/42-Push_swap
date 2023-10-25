@@ -6,7 +6,7 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:21:19 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/10/24 14:31:18 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:43:08 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,18 @@
 
 # include "./libft/libft.h"
 
-void		check_input_integer(char **arr);
+typedef struct s_stack
+{
+	void			*content;
+	struct s_stack	*next;
+	size_t			index;
+}					t_stack;
+
+typedef struct s_ps
+{
+	t_stack			a;
+	t_stack			b;
+}					t_ps;
+
+void				check_input_integer(char **arr);
 #endif
