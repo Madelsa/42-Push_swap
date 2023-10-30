@@ -6,13 +6,13 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 21:10:52 by mahmoud           #+#    #+#             */
-/*   Updated: 2023/09/09 15:24:57 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/10/30 08:03:42 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	get_int_len(int n)
+size_t	get_int_len(int n)
 {
 	size_t	len;
 

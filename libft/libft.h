@@ -6,7 +6,7 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:05:47 by a0ec6397          #+#    #+#             */
-/*   Updated: 2023/09/10 13:33:47 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:43:22 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	size_t			index;
 }					t_list;
 
 int					ft_atoi(const char *str);
@@ -47,7 +48,7 @@ char				*ft_strchr(const char *str, int c);
 char				*ft_strdup(const char *str);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *str, const char *to_find,
 						size_t len);
@@ -85,5 +86,6 @@ unsigned int		ft_put_hex_uint_lower(unsigned int i);
 unsigned int		ft_put_hex_uint_upper(unsigned int i);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*get_next_line(int fd);
+size_t				get_int_len(int n);
 
 #endif

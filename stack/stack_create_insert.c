@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   stack_create_insert.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/06 14:26:20 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/10/30 12:38:41 by mabdelsa         ###   ########.fr       */
+/*   Created: 2023/10/26 13:34:12 by mabdelsa          #+#    #+#             */
+/*   Updated: 2023/10/30 16:45:08 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	create_stacks(t_ps *stack)
 {
-	size_t	i;
+	stack->a = NULL;
+	stack->b = NULL;
+}
 
-	i = 0;
-	while (lst)
-	{
-		i++;
-		lst = lst->next;
-	}
-	return (i);
+void	insert_into_stack(t_ps *stack, char *str)
+{
+	t_stack			*new_node;
+	static size_t	i = 1;
+
+	new_node = ft_stack_lstnew(ft_atoi_ps(str));
+	new_node->index = i++;
+	ft_stack_lstadd_back(&stack->a, new_node);
 }

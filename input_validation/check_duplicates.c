@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   check_duplicates.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/06 14:26:20 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/10/30 12:38:41 by mabdelsa         ###   ########.fr       */
+/*   Created: 2023/10/30 12:33:03 by mabdelsa          #+#    #+#             */
+/*   Updated: 2023/10/30 15:27:42 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	check_dup(t_ps *stack)
 {
+	t_stack	*current;
 	size_t	i;
+	t_stack	*check;
 
-	i = 0;
-	while (lst)
+	i = ft_stack_lstsize(stack->a);
+	check = stack->a;
+	while (i > 0)
 	{
-		i++;
-		lst = lst->next;
+		current = check->next;
+		while (current != NULL)
+		{
+			if (current->content == check->content)
+				return (free_list(stack), print_error(), exit(1));
+			current = current->next;
+		}
+		check = check->next;
+		i--;
 	}
-	return (i);
 }
