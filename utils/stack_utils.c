@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:35:32 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/10/30 16:50:48 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/11/19 20:33:54 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,22 @@ void	ft_stack_lstadd_back(t_stack **lst, t_stack *new)
 	while (node->next)
 		node = node->next;
 	node->next = new;
+}
+
+void	ft_stack_lstadd_front(t_stack **lst, t_stack *new)
+{
+	if (!new || !lst)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		new->next = NULL;
+	}
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }
 
 t_stack	*ft_stack_lstnew(int content)

@@ -3,55 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:20:59 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/10/30 15:40:46 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/11/19 21:40:50 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	free_arr(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i] != NULL)
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-}
-
-void	free_arr_list(t_ps *stack, char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i] != NULL)
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-	ft_stack_lstclear(&stack->a, free);
-}
-
-void	free_list(t_ps *stack)
-{
-	ft_stack_lstclear(&stack->a, free);
-}
 
 void	print_list(t_ps *stack)
 {
 	t_stack	*current;
 
 	current = stack->a;
+	ft_printf("\nstack A\n");
 	while (current != NULL)
 	{
-		ft_printf("%d\t", current->index);
+		// ft_printf("%d\t", current->index);
+		ft_printf("%d\n", current->content);
+		current = current->next;
+	}
+	current = stack->b;
+	ft_printf("\nstack B\n");
+	while (current != NULL)
+	{
 		ft_printf("%d\n", current->content);
 		current = current->next;
 	}
@@ -77,6 +53,17 @@ int	main(int ac, char **av)
 		free_arr(arr);
 	}
 	check_dup(&stack);
+	// sa(&stack);
+	// sb(&stack);
+	// ss(&stack);
+	// ra(&stack);
+	// rb(&stack);
+	// rr(&stack);
+	// rra(&stack);
+	// rrb(&stack);
+	// rrr(&stack);
+	// pa(&stack);
+	// pb(&stack);
 	print_list(&stack);
 	free_list(&stack);
 }

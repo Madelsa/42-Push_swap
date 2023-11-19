@@ -3,15 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+         #
+#    By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/22 14:03:21 by mabdelsa          #+#    #+#              #
-#    Updated: 2023/10/30 14:45:10 by mabdelsa         ###   ########.fr        #
+#    Updated: 2023/11/19 18:43:41 by mahmoud          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC	=	push_swap.c ./input_validation/validate_input.c ./stack/stack_create_insert.c\
-		./utils/stack_utils.c  ./utils/utils.c ./input_validation/check_duplicates.c
+		./utils/stack_utils.c ./utils/utils.c ./input_validation/check_duplicates.c\
+		./utils/free_memory.c ./stack/stack_functions.c
 		
 NAME = push_swap
 AR = ar rs
