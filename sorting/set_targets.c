@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_duplicates.c                                 :+:      :+:    :+:   */
+/*   set_targets.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 12:33:03 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/22 18:51:10 by mahmoud          ###   ########.fr       */
+/*   Created: 2023/11/22 19:16:51 by mahmoud           #+#    #+#             */
+/*   Updated: 2023/11/25 16:51:49 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_dup(t_ps *stacks)
+void set_targets_a(t_ps *stacks)
 {
-	t_stack	*current;
-	size_t	i;
-	t_stack	*check;
+    t_stack *current;
+    
+    current = stacks->a;
+    while (current != NULL)
+    {
+        find_next_smallest_node(stacks->b, current);
+       current = current->next;
+    }
+    
+}
 
-	i = ft_stack_lstsize(stacks->a);
-	check = stacks->a;
-	while (i > 0)
-	{
-		current = check->next;
-		while (current != NULL)
-		{
-			if (current->content == check->content)
-				return (free_list(stacks), print_error(), exit(1));
-			current = current->next;
-		}
-		check = check->next;
-		i--;
-	}
+void set_targets_b(t_ps *stacks)
+{
+    t_stack *current;
+
+    current = stacks->b;
+    while (current != NULL)
+    {
+        find_next_largest_node(stacks->a, current);
+        current = current->next;
+    }
 }

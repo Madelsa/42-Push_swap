@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_duplicates.c                                 :+:      :+:    :+:   */
+/*   check_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 12:33:03 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/22 18:51:10 by mahmoud          ###   ########.fr       */
+/*   Created: 2023/11/20 18:27:27 by mahmoud           #+#    #+#             */
+/*   Updated: 2023/11/25 19:07:01 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_dup(t_ps *stacks)
+void    check_list_sorted(t_ps *stacks)
 {
-	t_stack	*current;
-	size_t	i;
-	t_stack	*check;
-
-	i = ft_stack_lstsize(stacks->a);
-	check = stacks->a;
-	while (i > 0)
-	{
-		current = check->next;
-		while (current != NULL)
-		{
-			if (current->content == check->content)
-				return (free_list(stacks), print_error(), exit(1));
-			current = current->next;
-		}
-		check = check->next;
-		i--;
-	}
+    t_stack *current;
+    int     sorted;
+    
+    current = stacks->a;
+    sorted = 1;
+    while (current->next != NULL)
+    {
+        if (current->content > current->next->content)
+        {
+            sorted = 0;
+            break;
+        }
+        current = current->next;
+    }
+    if (sorted == 1)
+        return (free_list(stacks), exit(0));
 }

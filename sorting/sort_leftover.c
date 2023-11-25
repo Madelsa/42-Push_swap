@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_duplicates.c                                 :+:      :+:    :+:   */
+/*   sort_leftover.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 12:33:03 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/22 18:51:10 by mahmoud          ###   ########.fr       */
+/*   Created: 2023/11/24 21:00:52 by mahmoud           #+#    #+#             */
+/*   Updated: 2023/11/25 18:30:11 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_dup(t_ps *stacks)
+void sort_leftover_nodes(t_ps *stacks)
 {
-	t_stack	*current;
-	size_t	i;
-	t_stack	*check;
-
-	i = ft_stack_lstsize(stacks->a);
-	check = stacks->a;
-	while (i > 0)
-	{
-		current = check->next;
-		while (current != NULL)
-		{
-			if (current->content == check->content)
-				return (free_list(stacks), print_error(), exit(1));
-			current = current->next;
-		}
-		check = check->next;
-		i--;
-	}
+    t_stack *max_node;
+    // rra(stacks);
+    // set_index(stacks->a);
+    // print_list(stacks);
+    max_node = set_max_node(stacks);
+    if (max_node->index == 0)
+        ra(stacks, 0);
+    else if (max_node->index == 1)
+        rra(stacks, 0);
+    if (stacks->a->content > stacks->a->next->content)
+        sa(stacks);
 }
