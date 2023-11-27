@@ -6,7 +6,7 @@
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:41:25 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/25 19:49:47 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/27 18:50:42 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	print_error(void)
 {
-	// ft_printf("\033[31mError\n\033[0m");
 	ft_putstr_fd("Error\n", 2);
 }
 
-void	perform_checks(t_ps *stacks, char **arr, char *str)
+static void	perform_checks(t_ps *stacks, char **arr, char *str)
 {
 	int		i;
 	int		sign_count;
