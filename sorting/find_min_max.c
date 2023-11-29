@@ -6,7 +6,7 @@
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:48:46 by mahmoud           #+#    #+#             */
-/*   Updated: 2023/11/25 17:28:14 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/29 19:21:41 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ void find_max(t_stack *stack)
     }
 }
 
-t_stack *set_max_node(t_ps *stacks)
+t_stack *set_max_node(t_stack *stack)
 {
     t_stack *current;
     t_stack *max_node;
     
     max_node = NULL;
-    current = stacks->a;
-    find_max(stacks->a);
+    current = stack;
+    find_max(stack);
     while (current != NULL)
     {
-        if (current->content == stacks->a->max)
+        if (current->content == stack->max)
         {
             max_node = current;
             break;
@@ -60,17 +60,17 @@ t_stack *set_max_node(t_ps *stacks)
     return(max_node);
 }
 
-t_stack *set_min_node(t_ps *stacks)
+t_stack *set_min_node(t_stack *stack)
 {
     t_stack *current;
     t_stack *min_node;
     
     min_node = NULL;
-    current = stacks->a;
-    find_min(stacks->a);
+    current = stack;
+    find_min(stack);
     while (current != NULL)
     {
-        if (current->content == stacks->a->min)
+        if (current->content == stack->min)
         {
             min_node = current;
             break;

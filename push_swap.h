@@ -6,7 +6,7 @@
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:21:19 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/27 18:54:31 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/29 19:27:22 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ void				find_min(t_stack *stack);
 void				find_max(t_stack *stack);
 void				set_index(t_stack *stack);
 void 				set_targets_a(t_ps *stacks);
-void				find_next_smallest_node(t_stack *stack_b, t_stack *node_a);
-void				find_max_value_node(t_stack *stack_b, t_stack *node_a);
 void 				calc_moves_stack_a(t_ps *stacks);
 void 				calc_size_median(t_ps *stacks);
 void 				find_cheapest_node(t_stack *stack_a);
@@ -76,7 +74,7 @@ void				perform_operations(t_ps *stacks);
 void				sort_leftover_nodes(t_ps *stacks);
 void 				set_targets_b(t_ps *stacks);
 void				find_next_largest_node(t_stack *stack_a, t_stack *node_b);
-t_stack 			*set_max_node(t_ps *stacks);
-t_stack 			*set_min_node(t_ps *stacks);
+t_stack 			*set_max_node(t_stack *stack);
+t_stack 			*set_min_node(t_stack *stack);
 
 #endif

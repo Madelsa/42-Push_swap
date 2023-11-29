@@ -6,7 +6,7 @@
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 05:40:51 by mahmoud           #+#    #+#             */
-/*   Updated: 2023/11/27 19:00:51 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/29 19:19:57 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void sort_a(t_ps *stacks)
     t_stack *min;
     size_t median;
     
-    min = set_min_node(stacks);
+    min = set_min_node(stacks->a);
     calc_size_median(stacks);
     median = stacks->a->median;
     while (1)

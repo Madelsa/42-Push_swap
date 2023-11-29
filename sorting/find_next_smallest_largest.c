@@ -6,45 +6,11 @@
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:46:22 by mahmoud           #+#    #+#             */
-/*   Updated: 2023/11/27 18:14:01 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/29 19:27:12 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void find_max_value_node(t_stack *stack_b, t_stack *node_a)
-{
-    t_stack *current;
-    
-    find_max(stack_b);
-    current = stack_b;
-    while (current != NULL)
-    {
-        if (current->content == stack_b->max)
-        {
-            node_a->target = current;
-            return ;
-        }
-        current = current->next;
-    }   
-}
-
-void find_min_value_node(t_stack *stack_a, t_stack *node_b)
-{
-    t_stack *current;
-    
-    find_min(stack_a);
-    current = stack_a;
-    while (current != NULL)
-    {
-        if (current->content == stack_a->min)
-        {
-            node_b->target = current;
-            return ;
-        }
-        current = current->next;
-    }   
-}
 
 void find_next_smallest_node(t_stack *stack_b, t_stack *node_a) 
 {
@@ -63,7 +29,7 @@ void find_next_smallest_node(t_stack *stack_b, t_stack *node_a)
         current = current->next;
     }
     if (node_a->target == NULL)
-        find_max_value_node(stack_b, node_a);
+        node_a->target = set_max_node(stack_b);
 }
 
 void find_next_largest_node(t_stack *stack_a, t_stack *node_b)
@@ -83,5 +49,5 @@ void find_next_largest_node(t_stack *stack_a, t_stack *node_b)
         current = current->next;
     }
     if (node_b->target == NULL)
-        find_min_value_node(stack_a, node_b);
+        node_b->target = set_min_node(stack_a);
 }
