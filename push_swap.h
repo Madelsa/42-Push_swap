@@ -6,7 +6,7 @@
 /*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:21:19 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/29 19:27:22 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/29 19:50:39 by mahmoud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void				create_stacks(t_ps *stacks);
 void				insert_into_stack(t_ps *stacks, char *str);
 void				free_arr_list(t_ps *stacks, char **arr);
 t_stack				*ft_stack_lstnew(int content);
+void				find_next_smallest_node(t_stack *stack_b, t_stack *node_a);
+void				find_next_largest_node(t_stack *stack_a, t_stack *node_b);
 void				ft_stack_lstadd_back(t_stack **lst, t_stack *new_list);
 void				ft_stack_lstadd_front(t_stack **lst, t_stack *new);
 void				ft_stack_lstclear(t_stack **lst, void (*del)(void *));
