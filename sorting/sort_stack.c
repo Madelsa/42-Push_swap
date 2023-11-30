@@ -6,7 +6,7 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 05:40:51 by mahmoud           #+#    #+#             */
-/*   Updated: 2023/11/30 15:23:07 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:56:05 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	perform_operations(t_ps *stacks)
 	median_b = stacks->b->median;
 	while (1)
 	{
+		if (cheapest_node->index == 0 && cheapest_node->target->index == 0)
+			break ;
 		both_above_below(stacks, cheapest_node, median_a, median_b);
 		if (cheapest_node->index != 0 && cheapest_node->index <= median_a)
 			ra(stacks, 0);
@@ -51,8 +53,6 @@ void	perform_operations(t_ps *stacks)
 		else if (cheapest_node->target->index != 0
 			&& cheapest_node->target->index > median_b)
 			rrb(stacks, 0);
-		if (cheapest_node->index == 0 && cheapest_node->target->index == 0)
-			break ;
 	}
 	pb(stacks);
 }
