@@ -3,44 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:20:59 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/26 01:46:02 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/30 15:28:12 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_list(t_ps *stacks)
-{
-	t_stack	*current;
-
-	current = stacks->a;
-	ft_printf("\nstack A\n");
-	while (current != NULL)
-	{
-		ft_printf("%d\t", current->index);
-		ft_printf("%d\n", current->content);
-		// ft_printf("target: %d\t", current->target->content);
-		// ft_printf("push cost: %d\t", current->push_cost);
-		// ft_printf("target push cost: %d\n", current->target->push_cost);
-		// // ft_printf("cheapest node vale: %d\n", stacks->a->cheapest_node->content);
-		current = current->next;
-	}
-	current = stacks->b;
-	ft_printf("\nstack B\n");
-	while (current != NULL)
-	{
-		ft_printf("%d\t", current->index);
-		ft_printf("%d\t", current->content);
-		ft_printf("target: %d\t", current->target->content);
-		ft_printf("push cost: %d\t", current->push_cost);
-		ft_printf("target push cost: %d\t", current->target->push_cost);
-		ft_printf("cheapest node vale: %d\n", stacks->b->cheapest_node->content);
-		current = current->next;
-	}
-}
 
 int	main(int ac, char **av)
 {
@@ -65,6 +35,5 @@ int	main(int ac, char **av)
 	set_index(stacks.a);
 	check_list_sorted(&stacks);
 	push_to_b(&stacks);
-	// print_list(&stacks);
 	free_list(&stacks);
 }

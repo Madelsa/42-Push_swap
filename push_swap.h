@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:21:19 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/29 19:50:39 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/30 15:28:29 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_stack
 	int				content;
 	struct s_stack	*next;
 	struct s_stack	*target;
-	struct s_stack  *cheapest_node;
+	struct s_stack	*cheapest_node;
 	size_t			push_cost;
 	int				min;
 	int				max;
@@ -45,7 +45,7 @@ t_stack				*ft_stack_lstnew(int content);
 void				find_next_smallest_node(t_stack *stack_b, t_stack *node_a);
 void				find_next_largest_node(t_stack *stack_a, t_stack *node_b);
 void				ft_stack_lstadd_back(t_stack **lst, t_stack *new_list);
-void				ft_stack_lstadd_front(t_stack **lst, t_stack *new);
+void				ft_stack_lstadd_front(t_stack **lst, t_stack *new_list);
 void				ft_stack_lstclear(t_stack **lst, void (*del)(void *));
 size_t				ft_stack_lstsize(t_stack *lst);
 void				print_error(void);
@@ -67,16 +67,16 @@ void				check_list_sorted(t_ps *stacks);
 void				find_min(t_stack *stack);
 void				find_max(t_stack *stack);
 void				set_index(t_stack *stack);
-void 				set_targets_a(t_ps *stacks);
-void 				calc_moves_stack_a(t_ps *stacks);
-void 				calc_size_median(t_ps *stacks);
-void 				find_cheapest_node(t_stack *stack_a);
+void				set_targets_a(t_ps *stacks);
+void				calc_moves_stack_a(t_ps *stacks);
+void				calc_size_median(t_ps *stacks);
+void				find_cheapest_node(t_stack *stack_a);
 void				push_to_b(t_ps *stacks);
 void				perform_operations(t_ps *stacks);
 void				sort_leftover_nodes(t_ps *stacks);
-void 				set_targets_b(t_ps *stacks);
+void				set_targets_b(t_ps *stacks);
 void				find_next_largest_node(t_stack *stack_a, t_stack *node_b);
-t_stack 			*set_max_node(t_stack *stack);
-t_stack 			*set_min_node(t_stack *stack);
+t_stack				*set_max_node(t_stack *stack);
+t_stack				*set_min_node(t_stack *stack);
 
 #endif

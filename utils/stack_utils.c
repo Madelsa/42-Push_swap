@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:35:32 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/25 17:39:08 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/11/30 15:27:46 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ size_t	ft_stack_lstsize(t_stack *lst)
 	size_t	i;
 
 	i = 0;
-	// ft_printf("in size!!!");
 	while (lst)
 	{
 		i++;
