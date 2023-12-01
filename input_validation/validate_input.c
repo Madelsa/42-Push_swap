@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:41:25 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/27 18:50:42 by mahmoud          ###   ########.fr       */
+/*   Updated: 2023/12/01 14:13:37 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	perform_checks(t_ps *stacks, char **arr, char *str)
 		if (str[i] == '-' || str[i] == '+')
 		{
 			sign_count++;
-			if (ft_isdigit(str[i + 1]) == 0 || sign_count > 1)
+			if (i != 0 || ft_isdigit(str[i + 1]) == 0 || sign_count > 1)
 				return (free_arr_list(stacks, arr), print_error(), exit(1));
 		}
 		else if (ft_isdigit(str[i]) == 0)

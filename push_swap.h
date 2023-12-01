@@ -6,7 +6,7 @@
 /*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 12:21:19 by mabdelsa          #+#    #+#             */
-/*   Updated: 2023/11/30 15:28:29 by mabdelsa         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:38:44 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_ps
 }					t_ps;
 
 void				check_and_insert(t_ps *stacks, char **arr);
-void				print_list(t_ps *stacks);
 void				free_arr(char **arr);
 void				create_stacks(t_ps *stacks);
 void				insert_into_stack(t_ps *stacks, char *str);
