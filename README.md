@@ -9,7 +9,7 @@ The Push_swap project is a sorting algorithm project at 42 School. The goal is t
 - [Algorithm](#algorithm)
 - [Usage](#usage)
 
-## Introduction
+## Description
 
 Push_swap challenges students to implement a sorting algorithm using two stacks (`A` and `B`) and a set of operations. The objective is to sort the stack `A` in ascending order using the fewest possible operations. The program must output a series of operations that, when executed, result in a sorted stack.
 
