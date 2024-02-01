@@ -50,7 +50,7 @@ https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 3. Compile the program:
 
    ```bash
-   cd 42-push_swap
+   make
    ```
    
 4. Run the program with a list of integers to sort:
