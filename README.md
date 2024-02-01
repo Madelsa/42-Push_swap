@@ -58,7 +58,7 @@ https://medium.com/@ayogun/push-swap-c1f5d2d41e97
    ```bash
    ./push_swap 3 1 4 2
    ```
-   `OR`
+   `OR:`
    ```bash
    ./push_swap "3 1 4 2"
    ```
